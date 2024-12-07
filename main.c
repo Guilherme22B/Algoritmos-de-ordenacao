@@ -2,6 +2,10 @@
 #include <stdlib.h>
 
 
+
+
+
+
 int main() {
     int opcao;
 
@@ -55,25 +59,25 @@ int main() {
         exponential_search();
         break;
     case 5:
-        printf("Shell Sort\n");
+        shell_sort();
         break;
     case 6:
-        printf("Merge Sort\n");
+        merge_sort();
         break;
     case 7:
-        printf("Selection Sort\n");
+        selection_sort();
         break;
     case 8:
-        printf("Bucket Sort\n");
+        /*bucket_sort();*/
         break;
     case 9:
-        printf("Radix Sort\n");
+        /*radix_sort();*/
         break;
     case 10:
-        printf("Quick Sort\n");
+        /*quick_sort();*/
         break;
     case 11:
-        printf("Ternary Search\n");
+        /*ternary_search();*/
         break;
     case 12:
         printf("Comparação de Algoritmos de Busca\n");
@@ -226,13 +230,13 @@ void Interpolation_Search(){
         break;
     default:
         system("cls");
-        binary_search();
+        Interpolation_Search();
         break;
     }
 };
 
 void jump_search(){   
-       int opcao;
+    int opcao;
     char resposta;
     printf("=========================================\n");
     printf("     Bem-vindo ao Jump Search \n");
@@ -273,7 +277,7 @@ void jump_search(){
         printf("realiza aproximadamente 1.000 saltos para resolução desse algoritimo\n\n");
 
 
-        printf("Deseja implementar o Binary Search? (s/n): ");
+        printf("Deseja implementar o jump search? (s/n): ");
         scanf(" %c", &resposta);  
 
         if (resposta == 's') {
@@ -286,12 +290,409 @@ void jump_search(){
         break;
     default:
         system("cls");
-        binary_search();
+        jump_search();
         break;
     }
 
 }
 
-void exponential_search(){
+void exponential_search(){  
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Exponetial Search \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        system("cls");
+        printf("implementação aqui\n");
+        break;
+    case 2:
+        system("cls");
+        printf("================= Questão ================\n\n");
+        printf(" Analise o desempenho do Exponential Search\n em listas muito grandes e pequenas.\n\n");
+        printf("===========================================\n\n");
+        printf("================= Grandes ================\n\n");
+        printf("O Exponential Search é eficiente em listas grandes,\n");
+        printf("sendo ideal para reduzir rapidamente o espaço de busca.\n");
+        printf("Ele também terá mais eficiência caso o número esteja próximo ao início,\n");
+        printf("mas pode perder desempenho devido ao aumento no número de operações.\n\n");
+
+        printf("================= Pequenas ===============\n\n");
+        printf("Em listas pequenas, ele acaba gerando etapas extras e desnecessárias,\n");
+        printf("se mostrando menos vantajoso nesses casos.\n");
+
+        printf("Deseja implementar o Exponetial Search? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 's') {
+            system("cls");
+            exponential_search();
+        } else {
+            system("cls");
+            main();
+        }
+        break;
+    default:
+        system("cls");
+        exponential_search();
+        break;
+    }
 
 }
+
+void shell_sort(){
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Shell Sort \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        system("cls");
+        printf("implementação aqui\n");
+        break;
+    case 2:
+        system("cls");
+        printf("================= Questão ================\n\n");
+        printf(" Explique como a escolha da sequência de intervalos\n");
+        printf(" afeta a eficiência do algoritmo.\n\n");
+        printf("===========================================\n\n");
+        printf("A escolha da sequência de intervalos é importante porque\n");
+        printf("ela define como os elementos serão comparados e deslocados\n");
+        printf("durante o processo de ordenação.\n\n");
+        printf("Se a sequência não for adequada, o algoritmo pode realizar\n");
+        printf("muitas comparações e trocas desnecessárias, tornando-o menos eficiente.\n");
+        printf("Por outro lado, uma boa sequência reduz o número de operações,\n");
+        printf("melhorando o desempenho geral do algoritmo.\n");
+
+
+        printf("Deseja implementar o Exponetial Search? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 's') {
+            system("cls");
+            exponential_search();
+        } else {
+            system("cls");
+            shell_sort();
+        }
+        break;
+    default:
+        system("cls");
+        main();
+        break;
+    }
+
+}
+
+void merge_sort() {
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Merge Sort \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        system("cls");
+        printf("Implementação do Merge Sort aqui.\n");
+        break;
+    case 2:
+        system("cls");
+        printf("================= Questão ================\n\n");
+        printf(" Explique o conceito de dividir para conquistar usado nesse algoritmo.\n");
+        printf("===========================================\n\n");
+        printf("O conceito de 'dividir para conquistar' no Merge Sort consiste em dividir a lista em\n");
+        printf("partes menores, até que cada sublista tenha apenas um elemento. Em seguida, as sublistas\n");
+        printf("são unidas de forma ordenada até que toda a lista original seja ordenada. Esse processo\n");
+        printf("ajuda a reduzir o tempo de execução de algoritmos de ordenação.\n");
+
+        printf("Deseja implementar o Exponential Search? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 's') {
+            system("cls");
+            merge_sort(); 
+        } else {
+            system("cls");
+            main(); 
+        }
+        break;
+    default:
+        system("cls");
+        merge_sort();
+        break;
+    }
+}
+
+void selection_sort(){
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Selection_sort \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        system("cls");
+        printf("implementação aqui\n");
+        break;
+    case 2:
+        system("cls");
+        printf("================= Questão ================\n\n");
+        printf(" - Analise o desempenho do Selection Sort \n");
+        printf(" em listas pequenas, médias e grandes.\n\n");
+        printf("===========================================\n\n");
+
+        printf("================= Pequenas =================\n\n");
+        printf("O Selection Sort é eficiente para listas pequenas,\n");
+        printf("pois o número de comparações e trocas é baixo.\n\n");
+
+        printf("================= Médias =================\n\n");
+        printf("Em listas médias, o desempenho começa a cair,\n");
+        printf("pois o número de comparações aumenta consideravelmente.\n\n");
+
+        printf("================= Grandes =================\n\n");
+        printf("Em listas grandes, o Selection Sort é muito ineficiente,\n");
+        printf("devido à sua complexidade O(n²), tornando-o mais lento que outros algoritmos.");
+
+
+        printf("Deseja implementar o Exponetial Search? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 's') {
+            system("cls");
+            exponential_search();
+        } else {
+            system("cls");
+            main();
+        }
+        break;
+    default:
+        system("cls");
+        selection_sort();
+        break;
+    }
+
+}
+/*
+void bucket_sort(){
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Bucket Sort \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        system("cls");
+        printf("implementação aqui\n");
+        break;
+    case 2:
+        system("cls");
+        printf("================= Questão ================\n\n");
+        printf(" Explique como os baldes são preenchidos e ordenados.\n");
+        printf("===========================================\n\n");
+        printf("Eles são preenchidos coletando os dados da lista que precisa ser ordenada.\n");
+        printf("Cada informação é alocada no balde correspondente a partir de operadores ternários.\n");
+        printf("Eles são ordenados com base na lista que queremos ordenar ou são pré-ordenados.");
+        printf("Deseja implementar o Exponetial Search? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 's') {
+            system("cls");
+            exponential_search();
+        } else {
+            system("cls");
+            main();
+        }
+        break;
+    default:
+        system("cls");
+        bucket_sort();
+        break;
+    }
+}
+
+void radix_sort(){
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Radix Sort \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        system("cls");
+        printf("implementação aqui\n");
+        break;
+    case 2:
+        system("cls");
+        printf("================= Questão ================\n\n");
+        printf(" Explique como o algoritmo lida com bases diferentes (ex.: base 10 e base 2).\n");
+        printf("===========================================\n\n");
+        printf("O algoritmo organiza os números de acordo com os dígitos em cada base. Na base 10, usa-se os números como conhecemos,\n");
+        printf("e na base 2, usa-se os valores binários. A ordenação acontece com base nos dígitos dessas bases.");
+
+
+        printf("Deseja implementar o Exponetial Search? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 's') {
+            system("cls");
+            radix_sort();
+        } else {
+            system("cls");
+            main();
+        }
+        break;
+    default:
+        system("cls");
+        radix_sort();
+        break;
+    }
+}
+
+void quick_sort(){
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Quick Sort \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        system("cls");
+        printf("implementação aqui\n");
+        break;
+    case 2:
+        system("cls");
+        printf("================= Questão ================\n\n");
+        printf(" Analise o desempenho do Quick Sort em listas quase ordenadas e completamente desordenadas.\n");
+        printf("===========================================\n\n");
+        printf("Em listas quase ordenadas, o desempenho do Quick Sort é bom, mas em listas desordenadas pode ser mais lento,\n");
+        printf("dependendo da escolha do pivô.\n");
+        printf("ou seja em lista não ordenadas o Quick Sort é inconstante tendo casos que ele demora muito\n");
+
+        printf("Deseja implementar o Exponetial Search? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 's') {
+            system("cls");
+            quick_sort();
+        } else {
+            system("cls");
+            main();
+        }
+        break;
+    default:
+        system("cls");
+        quick_sort();
+        break;
+    }
+}
+
+void ternary_search(){
+
+    int opcao;
+    char resposta;
+    printf("=========================================\n");
+    printf("     Bem-vindo ao Ternary Search \n");
+    printf("=========================================\n\n");
+    printf(" Escolha uma das opções abaixo:\n\n");
+    printf("    1- Implementação\n");
+    printf("    2- Explicação \n\n");
+    printf(" Digite sua escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            system("cls");
+            printf("Implementação do Ternary Search aqui\n");
+            break;
+        case 2:
+            system("cls");
+            printf("================= Questão ================\n\n");
+            printf(" Identifique situações em que o Ternary Search\n");
+            printf("seria mais eficiente que o Binary Search.\n");
+            printf("===========================================\n\n");
+
+            printf("================= Exemplo 1 ================\n\n");
+            printf("Quando a função tem pontos de máximo e mínimo,\n");
+            printf("o Ternary Search pode explorar melhor a região.\n");
+            printf("Essa discrepância ajuda ele a chegar no resultado com maior velocidade.\n");
+
+            printf("================= Exemplo 2 ================\n\n");
+            printf("Em intervalos grandes e não ordenados,\n");
+            printf("o Ternary Search pode fazer uma busca mais refinada,\n");
+            printf("sem a necessidade de tantos ajustes comparado ao Binary.\n");
+            printf("Possui menor complexidade.\n");
+
+            printf("================= Exemplo 3 ================\n\n");
+            printf("Quando a função é crescente ou decrescente,\n");
+            printf("o Ternary Search ajuda a encontrar o valor de forma mais eficaz.\n");
+
+            printf("Deseja implementar o Exponetial Search? (s/n): ");
+            scanf(" %c", &resposta);  
+
+            if (resposta == 's') {
+                system("cls");
+                ternary_search();  
+            } else {
+                system("cls");
+                main();  
+            }
+            break;
+        default:
+            system("cls");
+            ternary_search();  
+            break;
+    }
+}
+
+*/
