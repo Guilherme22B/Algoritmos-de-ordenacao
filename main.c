@@ -2,124 +2,6 @@
 #include <stdlib.h>
 
 
-
-
-
-
-int main() {
-    int opcao;
-
-    system("clear");
-    system("cls");
-    printf("\n");
-    printf("=========== Algoritmos de Ordenação e Busca ===========\n");
-    printf("\n");
-    printf(" 1. Binary Search\n");
-    printf(" 2. Interpolation Search\n");
-    printf(" 3. Jump Search\n");
-    printf(" 4. Exponential Search\n");
-    printf(" 5. Shell Sort\n");
-    printf(" 6. Merge Sort\n");
-    printf(" 7. Selection Sort\n");
-    printf(" 8. Bucket Sort\n");
-    printf(" 9. Radix Sort\n");
-    printf("10. Quick Sort\n");
-    printf("11. Ternary Search\n");
-    printf("12. Comparação de Algoritmos de Busca\n");
-    printf("13. Comparação de Algoritmos de Ordenação\n");
-    printf("14. Análise de Complexidade\n");
-    printf("15. Busca e Ordenação em Strings\n");
-    printf("16. Aplicação Prática de Busca\n");
-    printf("17. Busca e Ordenação em Dados Reais\n");
-    printf("18. Ordenação Estável e Instável\n");
-    printf("19. Análise Visual dos Algoritmos\n");
-    printf("20. Desafios de Implementação\n");
-    printf("21. sair: \n");
-    printf("\n=======================================================\n");
-    printf("Digite sua escolha: ");
-    scanf("%d", &opcao);
-    system("cls");
-
-
-
-    switch (opcao)
-    {
-    case 1:
-        binary_search();
-        break;
-    case 2:
-        Interpolation_Search();
-        break;
-    case 3:
-        printf("Jump Search\n");
-        jump_search();
-        break;
-    case 4:
-        printf("Exponential Search\n");
-        exponential_search();
-        break;
-    case 5:
-        shell_sort();
-        break;
-    case 6:
-        merge_sort();
-        break;
-    case 7:
-        selection_sort();
-        break;
-    case 8:
-        bucket_sort();
-        break;
-    case 9:
-        radix_sort();
-        break;
-    case 10:
-        quick_sort();
-        break;
-    case 11:
-        ternary_search();
-        break;
-    case 12:
-        printf("Comparação de Algoritmos de Busca\n");
-        break;
-    case 13:
-        printf("Comparação de Algoritmos de Ordenação\n");
-        break;
-    case 14:
-        printf("Análise de Complexidade\n");
-        break;
-    case 15:
-        printf("Busca e Ordenação em Strings\n");
-        break;
-    case 16:
-        printf("Aplicação Prática de Busca\n");
-        break;
-    case 17:
-        printf("Busca e Ordenação em Dados Reais\n");
-        break;
-    case 18:
-        printf("Ordenação Estável e Instável\n");
-        break;
-    case 19:
-        printf("Análise Visual dos Algoritmos \n");
-        break;
-    case 20:
-        printf("Desafios de Implementação\n");
-        break;
-    case 21:
-        system("cls");
-        printf("=========== Saiu do algoritimo ===========\n");
-        break;
-    default:
-        system("cls");
-        main();
-        break;
-    }
-    
-   
-    return 0; 
-};
-
 void binary_search(){                    
 
     int opcao;
@@ -694,3 +576,121 @@ void ternary_search(){
             break;
     }
 }
+
+
+
+
+
+int main() {
+    int opcao;
+
+    system("clear");
+    system("cls");
+    printf("\n");
+    printf("=========== Algoritmos de Ordenação e Busca ===========\n");
+    printf("\n");
+    printf(" 1. Binary Search\n");
+    printf(" 2. Interpolation Search\n");
+    printf(" 3. Jump Search\n");
+    printf(" 4. Exponential Search\n");
+    printf(" 5. Shell Sort\n");
+    printf(" 6. Merge Sort\n");
+    printf(" 7. Selection Sort\n");
+    printf(" 8. Bucket Sort\n");
+    printf(" 9. Radix Sort\n");
+    printf("10. Quick Sort\n");
+    printf("11. Ternary Search\n");
+    printf("12. Comparação de Algoritmos de Busca\n");
+    printf("13. Comparação de Algoritmos de Ordenação\n");
+    printf("14. Análise de Complexidade\n");
+    printf("15. Busca e Ordenação em Strings\n");
+    printf("16. Aplicação Prática de Busca\n");
+    printf("17. Busca e Ordenação em Dados Reais\n");
+    printf("18. Ordenação Estável e Instável\n");
+    printf("19. Análise Visual dos Algoritmos\n");
+    printf("20. Desafios de Implementação\n");
+    printf("21. sair: \n");
+    printf("\n=======================================================\n");
+    printf("Digite sua escolha: ");
+    scanf("%d", &opcao);
+    system("cls");
+
+
+
+    switch (opcao)
+    {
+    case 1:
+        binary_search();
+        break;
+    case 2:
+        Interpolation_Search();
+        break;
+    case 3:
+        printf("Jump Search\n");
+        jump_search();
+        break;
+    case 4:
+        printf("Exponential Search\n");
+        exponential_search();
+        break;
+    case 5:
+        shell_sort();
+        break;
+    case 6:
+        merge_sort();
+        break;
+    case 7:
+        selection_sort();
+        break;
+    case 8:
+        bucket_sort();
+        break;
+    case 9:
+        radix_sort();
+        break;
+    case 10:
+        quick_sort();
+        break;
+    case 11:
+        ternary_search();
+        break;
+    case 12:
+        printf("Comparação de Algoritmos de Busca\n");
+        break;
+    case 13:
+        printf("Comparação de Algoritmos de Ordenação\n");
+        break;
+    case 14:
+        printf("Análise de Complexidade\n");
+        break;
+    case 15:
+        printf("Busca e Ordenação em Strings\n");
+        break;
+    case 16:
+        printf("Aplicação Prática de Busca\n");
+        break;
+    case 17:
+        printf("Busca e Ordenação em Dados Reais\n");
+        break;
+    case 18:
+        printf("Ordenação Estável e Instável\n");
+        break;
+    case 19:
+        printf("Análise Visual dos Algoritmos \n");
+        break;
+    case 20:
+        printf("Desafios de Implementação\n");
+        break;
+    case 21:
+        system("cls");
+        printf("=========== Saiu do algoritimo ===========\n");
+        break;
+    default:
+        system("cls");
+        main();
+        break;
+    }
+    
+   
+    return 0; 
+};
