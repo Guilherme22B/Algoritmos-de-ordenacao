@@ -235,10 +235,10 @@ void jump_search(){
         system("cls");
             printf("Jump Search\n");
 
-            int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};  // Lista de exemplo
+            int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};  
             int tamanho = sizeof(array) / sizeof(array[0]);
             int n;
-            int salto = (int) sqrt(tamanho);  // Tamanho ideal do salto (raiz quadrada do tamanho da lista)
+            int salto = (int) sqrt(tamanho);  
             int inicio = 0;
             int fim = salto;
 
@@ -261,7 +261,7 @@ void jump_search(){
                 }
             }
 
-            // Pesquisa linear após o salto
+            
             int encontrado = 0;
             for (int i = inicio; i < fim; i++) {
                 if (array[i] == n) {
@@ -426,7 +426,42 @@ void shell_sort(){
     {
     case 1:
         system("cls");
+<<<<<<< HEAD
         printf("implementação aqui\n");
+=======
+            printf("Shell Sort\n");
+
+            int array[10] = {5, 2, 9, 1, 5, 6, 3, 8, 7, 4};  
+            int tamanho = sizeof(array) / sizeof(array[0]);
+
+            printf("Lista de exemplo antes de ordenar: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            
+            int gap, i, j, temp;
+            for (gap = tamanho / 2; gap > 0; gap /= 2) {
+                for (i = gap; i < tamanho; i++) {
+                    temp = array[i];
+                    j = i;
+                    while (j >= gap && array[j - gap] > temp) {
+                        array[j] = array[j - gap];
+                        j -= gap;
+                    }
+                    array[j] = temp;
+                }
+            }
+
+            printf("Lista ordenada: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            break;
+>>>>>>> 7f8c1bfbd5fb1258c723dc2529a67d7e9269ec54
         break;
     case 2:
         system("cls");
@@ -478,7 +513,32 @@ void merge_sort() {
     {
     case 1:
         system("cls");
+<<<<<<< HEAD
         printf("Implementação do Merge Sort aqui.\n");
+=======
+            printf("Merge Sort\n");
+
+            int array[10] = {12, 11, 13, 5, 6, 7, 3, 9, 8, 2};  
+            int tamanho = sizeof(array) / sizeof(array[0]);
+
+            printf("Lista antes de ordenar: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            
+            mergeSort(array, 0, tamanho - 1);
+
+            printf("Lista ordenada: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            break;
+
+>>>>>>> 7f8c1bfbd5fb1258c723dc2529a67d7e9269ec54
         break;
     case 2:
         system("cls");
@@ -565,7 +625,7 @@ void selection_sort(){
 
 }
 
-void bucket_sort(){
+void bucket_sort() {
     int opcao;
     char resposta;
     printf("=========================================\n");
@@ -577,35 +637,115 @@ void bucket_sort(){
     printf(" Digite sua escolha: ");
     scanf("%d", &opcao);
 
-    switch (opcao)
-    {
-    case 1:
-        system("cls");
-        printf("implementação aqui\n");
-        break;
-    case 2:
-        system("cls");
-        printf("================= Questão ================\n\n");
-        printf(" Explique como os baldes são preenchidos e ordenados.\n");
-        printf("===========================================\n\n");
-        printf("Eles são preenchidos coletando os dados da lista que precisa ser ordenada.\n");
-        printf("Cada informação é alocada no balde correspondente a partir de operadores ternários.\n");
-        printf("Eles são ordenados com base na lista que queremos ordenar ou são pré-ordenados.");
-        printf("Deseja implementar o Exponetial Search? (s/n): ");
-        scanf(" %c", &resposta);  
+    switch (opcao) {
+        case 1: {
+            system("cls");
+            printf("Bucket Sort - Implementação\n");
 
-        if (resposta == 's') {
-            system("cls");
-            exponential_search();
-        } else {
-            system("cls");
-            main();
+            int tamanho;
+            printf("Digite o tamanho da lista de números: ");
+            scanf("%d", &tamanho);
+
+            if (tamanho <= 0) {
+                printf("Tamanho inválido. Tente novamente.\n");
+                bucket_sort();
+                return;
+            }
+
+            float array[tamanho];
+            printf("Digite os números no intervalo [0, 1):\n");
+            for (int i = 0; i < tamanho; i++) {
+                printf("Elemento %d: ", i + 1);
+                scanf("%f", &array[i]);
+                if (array[i] < 0 || array[i] >= 1) {
+                    printf("Número fora do intervalo [0, 1). Tente novamente.\n");
+                    i--;
+                }
+            }
+
+            
+            printf("\nLista original: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%.2f ", array[i]);
+            }
+            printf("\n");
+
+            
+            int numBuckets = 10;
+            float buckets[numBuckets][tamanho];
+            int bucketSizes[numBuckets];
+
+            for (int i = 0; i < numBuckets; i++) {
+                bucketSizes[i] = 0;
+            }
+
+            
+            for (int i = 0; i < tamanho; i++) {
+                int index = (int)(array[i] * numBuckets);
+                buckets[index][bucketSizes[index]++] = array[i];
+            }
+
+            
+            for (int i = 0; i < numBuckets; i++) {
+                for (int j = 1; j < bucketSizes[i]; j++) {
+                    float chave = buckets[i][j];
+                    int k = j - 1;
+                    while (k >= 0 && buckets[i][k] > chave) {
+                        buckets[i][k + 1] = buckets[i][k];
+                        k--;
+                    }
+                    buckets[i][k + 1] = chave;
+                }
+            }
+
+            
+            int index = 0;
+            for (int i = 0; i < numBuckets; i++) {
+                for (int j = 0; j < bucketSizes[i]; j++) {
+                    array[index++] = buckets[i][j];
+                }
+            }
+
+           
+            printf("\nLista ordenada: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%.2f ", array[i]);
+            }
+            printf("\n");
+
+            printf("\nDeseja realizar outra execução? (s/n): ");
+            scanf(" %c", &resposta);
+            if (resposta == 's' || resposta == 'S') {
+                system("cls");
+                bucket_sort();
+            } else {
+                printf("\nFinalizando...\n");
+            }
+            break;
         }
-        break;
-    default:
-        system("cls");
-        bucket_sort();
-        break;
+
+        case 2:
+            system("cls");
+            printf("================= Questão ================\n\n");
+            printf(" Explique como os baldes são preenchidos e ordenados.\n");
+            printf("===========================================\n\n");
+            printf("Eles são preenchidos coletando os dados da lista que precisa ser ordenada.\n");
+            printf("Cada informação é alocada no balde correspondente a partir de operadores ternários.\n");
+            printf("Eles são ordenados com base na lista que queremos ordenar ou são pré-ordenados.");
+            printf("Deseja implementar o Exponetial Search? (s/n): ");
+            scanf(" %c", &resposta);
+            if (resposta == 's' || resposta == 'S') {
+                system("cls");
+                bucket_sort();
+            } else {
+                printf("\nFinalizando...\n");
+            }
+            break;
+
+        default:
+            printf("Opção inválida. Tente novamente.\n");
+            bucket_sort();
+            break;
     }
 }
 
