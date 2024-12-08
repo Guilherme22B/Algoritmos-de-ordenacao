@@ -1,5 +1,6 @@
 #include <stdio.h> 
 #include <stdlib.h>
+#include <locale.h>
 
 
 void binary_search(){                    
@@ -35,7 +36,7 @@ void binary_search(){
                 printf(", ");
             }
         }
-        printf("};\n");
+        printf("};\n\n");
 
 
             printf("Digite um número da lista para ser encontrado: ");
@@ -45,7 +46,7 @@ void binary_search(){
         int meio = inicio + (fim - inicio) / 2;
 
         if (array[meio] == n) {
-            printf("Número %d encontrado na posição: %d\n", n, meio);
+            printf("Número %d encontrado na posição: %d\n", n, meio , "\n");
             
         }
 
@@ -55,6 +56,14 @@ void binary_search(){
             fim = meio - 1;
         }
     }
+
+        printf("Deseja sair? (s/n): ");
+        scanf(" %c", &resposta);  
+
+        if (resposta == 'n' || resposta == 'N') {
+            system("cls");
+            binary_search();
+        } 
             
         break;
     case 2:
@@ -618,11 +627,13 @@ void ternary_search(){
 
 
 int main() {
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     int opcao;
 
     system("clear");
     system("cls");
     printf("\n");
+
     printf("=========== Algoritmos de Ordenação e Busca ===========\n");
     printf("\n");
     printf(" 1. Binary Search\n");
