@@ -68,16 +68,16 @@ int main() {
         selection_sort();
         break;
     case 8:
-        /*bucket_sort();*/
+        bucket_sort();
         break;
     case 9:
-        /*radix_sort();*/
+        radix_sort();
         break;
     case 10:
-        /*quick_sort();*/
+        quick_sort();
         break;
     case 11:
-        /*ternary_search();*/
+        ternary_search();
         break;
     case 12:
         printf("Comparação de Algoritmos de Busca\n");
@@ -502,7 +502,7 @@ void selection_sort(){
     }
 
 }
-/*
+
 void bucket_sort(){
     int opcao;
     char resposta;
@@ -694,5 +694,3 @@ void ternary_search(){
             break;
     }
 }
-
-*/
