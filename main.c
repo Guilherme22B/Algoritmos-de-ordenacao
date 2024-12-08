@@ -232,8 +232,51 @@ void jump_search(){
     switch (opcao)
     {
     case 1:
-        
-        break;
+        system("cls");
+            printf("Jump Search\n");
+
+            int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};  // Lista de exemplo
+            int tamanho = sizeof(array) / sizeof(array[0]);
+            int n;
+            int salto = (int) sqrt(tamanho);  // Tamanho ideal do salto (raiz quadrada do tamanho da lista)
+            int inicio = 0;
+            int fim = salto;
+
+            printf("Lista de exemplo: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            printf("Qual número deseja encontrar? ");
+            scanf("%d", &n);
+
+            // Jump Search
+            while (fim < tamanho && array[fim] < n) {
+                printf("Pulando do índice %d para o índice %d\n", inicio, fim);
+                inicio = fim;
+                fim += salto;
+                if (fim > tamanho - 1) {
+                    fim = tamanho;
+                }
+            }
+
+            // Pesquisa linear após o salto
+            int encontrado = 0;
+            for (int i = inicio; i < fim; i++) {
+                if (array[i] == n) {
+                    printf("Número %d encontrado na posição: %d\n", n, i);
+                    encontrado = 1;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                printf("Número %d não encontrado.\n", n);
+            }
+
+            break;
+
     case 2:
         system("cls");
         printf("================= Questão ================\n\n");
