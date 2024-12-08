@@ -716,6 +716,18 @@ void ternary_search(){
         case 1:
             system("cls");
             printf("Implementação do Ternary Search aqui\n");
+
+            int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
+            int size = sizeof(arr) / sizeof(arr[0]);
+            int target = 7;  
+
+            int result = ternary_search_algorithm(arr, 0, size - 1, target);
+            if (result != -1) {
+                printf("Elemento encontrado no índice %d.\n", result);
+            } else {
+                printf("Elemento não encontrado.\n");
+            }
+            break;
             break;
         case 2:
             system("cls");
@@ -756,6 +768,59 @@ void ternary_search(){
             break;
     }
 }
+
+int ternary_search_algorithm(int arr[], int left, int right, int target) {
+    if (right >= left) {
+        // Dividir em três partes
+        int mid1 = left + (right - left) / 3;
+        int mid2 = right - (right - left) / 3;
+
+        
+        if (arr[mid1] == target) {
+            return mid1;
+        }
+        if (arr[mid2] == target) {
+            return mid2;
+        }
+
+        
+        if (target < arr[mid1]) {
+            return ternary_search_algorithm(arr, left, mid1 - 1, target);
+        }
+
+        
+        if (target > arr[mid2]) {
+            return ternary_search_algorithm(arr, mid2 + 1, right, target);
+        }
+
+        
+        return ternary_search_algorithm(arr, mid1 + 1, mid2 - 1, target);
+    }
+
+    
+    return -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
