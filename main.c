@@ -3,7 +3,7 @@
 #include <locale.h>
 
 
-void binary_search(){                    
+int binary_search(){                    
 
     int opcao;
     char resposta;
@@ -63,6 +63,7 @@ void binary_search(){
         if (resposta == 'n' || resposta == 'N') {
             system("cls");
             binary_search();
+            return 0;
         } 
             
         break;
@@ -99,6 +100,7 @@ void binary_search(){
         } else {
             system("cls");
             main();
+            return 0;
         }
         break;
     default:
@@ -108,7 +110,7 @@ void binary_search(){
     }
 };
 
-void Interpolation_Search(){
+int Interpolation_Search(){
     int opcao;
     char resposta;
     printf("=========================================\n");
@@ -124,7 +126,58 @@ void Interpolation_Search(){
     {
     case 1:
         system("cls");
-        printf("implementação aqui\n");
+        printf("Interpolatio Search\n");
+
+        int array[10] = {1,2,3,4,5,6,7,8,9,10};
+        int tamanho = sizeof(array) / sizeof(array[0]);
+        int n;
+        int inicio = 0;
+        int encontrado = 0;
+        int fim = tamanho - 1;
+        char resposta;
+
+        printf("int array[10] = {");
+        for (int i = 0; i < 10; i++) {
+            printf("%d", array[i]);
+            if (i < 9) {
+                printf(", ");
+            }
+        }
+        printf("};\n");
+
+        printf("Qual número deseja encontrar? ");
+        scanf("%d", &n);
+
+        while (inicio <= fim && n >= array[inicio] && n <= array[fim]) {
+            
+            int pos = inicio + ((fim - inicio) * (n - array[inicio])) / (array[fim] - array[inicio]);
+
+            if (array[pos] == n) {
+                printf("Número %d encontrado na posição: %d\n", n, pos);
+                encontrado = 1;
+                break;
+            }
+
+            
+            if (array[pos] < n) {
+                inicio = pos + 1;
+            } else {
+                fim = pos - 1;
+            }
+        }
+
+       
+        if (!encontrado) {
+            printf("Número %d não encontrado.\n", n);
+        }
+
+        printf("\nDeseja sair? (s/n): ");
+        scanf(" %c", &resposta);
+
+        if (resposta == 'n' || resposta == 'N') {
+            system("cls");
+            Interpolation_Search();  
+        }
         break;
     case 2:
         system("cls");
@@ -153,11 +206,13 @@ void Interpolation_Search(){
         } else {
             system("cls");
             main();
+            return 0;
         }
         break;
     default:
         system("cls");
         Interpolation_Search();
+        return 0;
         break;
     }
 };
@@ -177,8 +232,7 @@ void jump_search(){
     switch (opcao)
     {
     case 1:
-        system("cls");
-        printf("implementação aqui\n");
+        
         break;
     case 2:
         system("cls");
