@@ -19,7 +19,43 @@ void binary_search(){
     {
     case 1:
         system("cls");
-        printf("implementação aqui\n");
+        printf("Binary Search\n\n");
+
+        int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int tamanho = sizeof(array) / sizeof(array[0]);
+        int n;
+        int inicio = 0;
+        int fim = tamanho -1;
+
+
+        printf("int array[10] = {");
+        for (int i = 0; i < 10; i++) {
+            printf("%d", array[i]);
+            if (i < 9) { 
+                printf(", ");
+            }
+        }
+        printf("};\n");
+
+
+            printf("Digite um número da lista para ser encontrado: ");
+            scanf("%d", &n);
+
+           while (inicio <= fim) {
+        int meio = inicio + (fim - inicio) / 2;
+
+        if (array[meio] == n) {
+            printf("Número %d encontrado na posição: %d\n", n, meio);
+            
+        }
+
+        if (array[meio] < n) {
+            inicio = meio + 1;
+        } else {
+            fim = meio - 1;
+        }
+    }
+            
         break;
     case 2:
         system("cls");
