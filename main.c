@@ -426,7 +426,38 @@ void shell_sort(){
     {
     case 1:
         system("cls");
-        printf("implementação aqui\n");
+            printf("Shell Sort\n");
+
+            int array[10] = {5, 2, 9, 1, 5, 6, 3, 8, 7, 4};  // Lista de exemplo
+            int tamanho = sizeof(array) / sizeof(array[0]);
+
+            printf("Lista de exemplo antes de ordenar: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            // Algoritmo Shell Sort
+            int gap, i, j, temp;
+            for (gap = tamanho / 2; gap > 0; gap /= 2) {
+                for (i = gap; i < tamanho; i++) {
+                    temp = array[i];
+                    j = i;
+                    while (j >= gap && array[j - gap] > temp) {
+                        array[j] = array[j - gap];
+                        j -= gap;
+                    }
+                    array[j] = temp;
+                }
+            }
+
+            printf("Lista ordenada: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            break;
         break;
     case 2:
         system("cls");
@@ -478,7 +509,28 @@ void merge_sort() {
     {
     case 1:
         system("cls");
-        printf("Implementação do Merge Sort aqui.\n");
+            printf("Merge Sort\n");
+
+            int array[10] = {12, 11, 13, 5, 6, 7, 3, 9, 8, 2};  // Lista de exemplo
+            int tamanho = sizeof(array) / sizeof(array[0]);
+
+            printf("Lista antes de ordenar: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            // Chamada ao Merge Sort
+            mergeSort(array, 0, tamanho - 1);
+
+            printf("Lista ordenada: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            break;
+
         break;
     case 2:
         system("cls");
@@ -524,7 +576,28 @@ void selection_sort(){
     {
     case 1:
         system("cls");
-        printf("implementação aqui\n");
+            printf("Selection Sort\n");
+
+            int array[10] = {64, 25, 12, 22, 11};  // Lista de exemplo
+            int tamanho = sizeof(array) / sizeof(array[0]);
+
+            printf("Lista antes de ordenar: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            // Chamada ao Selection Sort
+            selectionSort(array, tamanho);
+
+            printf("Lista ordenada: ");
+            for (int i = 0; i < tamanho; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            break;
+
         break;
     case 2:
         system("cls");
